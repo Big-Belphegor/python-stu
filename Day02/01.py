@@ -52,3 +52,25 @@ __author__ = "Alien"
 #
 # test1()
 # test2()
+
+# 生成器
+# def fib(max):
+#     n,a,b, = 0,0,1
+#     while n < max:
+#         yield b
+#         a,b = b,a+b
+#         n = n +1
+# 逐个迭代：
+# f=fib(10)
+# print(next(f))
+# print(f.__next__())
+
+# 循坏迭代：
+# while True:
+#     try:
+#         x = next(g)
+#         print('g:',x)
+#     except StopAsyncIteration as e:
+#         print('Generator return value:',e.value)
+#         break
+
