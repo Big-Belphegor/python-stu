@@ -74,3 +74,10 @@ __author__ = "Alien"
 #         print('Generator return value:',e.value)
 #         break
 
+# 迭代器(有next方法的数据类型就是迭代器，没有就是可迭代数据)
+
+# map内置函数
+a = map(lambda n:n*2,range(10))
+for i in a:
+    print(i)
+
