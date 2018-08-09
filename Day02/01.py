@@ -77,7 +77,24 @@ __author__ = "Alien"
 # 迭代器(有next方法的数据类型就是迭代器，没有就是可迭代数据)
 
 # map内置函数
-a = map(lambda n:n*2,range(10))
-for i in a:
-    print(i)
+# a = map(lambda n:n*2,range(10))
+# for i in a:
+#     print(i)
+
+# 序列化一个字典
+import json
+
+a = {'name':'Alien','age':23}
+
+f = open("tojson.txt",'w')
+f.write(json.dumps(a))
+f.close()
+
+# 反序列化一个字典
+f = open("tojson.txt",'r')
+date = json.loads(f.read())
+
+print(date['age'])
+
+
 
