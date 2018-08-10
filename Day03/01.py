@@ -1,5 +1,6 @@
 __author__ = "Alien"
 
+# 时间模块
 import time,datetime
 
 # print(time.time())                  # 时间戳，以秒为单位
@@ -21,6 +22,7 @@ import time,datetime
 
 # print(datetime.datetime.now())        # 查看当前时间
 
+# 随机模块
 import random
 # print(random.randint(1,5))              # 随机1-5之间的数
 # print(random.randrange(5))              # 随机0-4之间的数
@@ -34,14 +36,35 @@ import random
 # print(tt)
 
 # 小实例：随机打印4个数字
-changenum = ''
+# changenum = ''
+#
+# for i in range(4):
+#     num1 = random.randrange(0,4)
+#     if i == num1:
+#         tmp = chr(random.randint(10,20))    # 转为字母
+#     else:
+#         tmp = random.randint(0,9)
+#     changenum += str(tmp)+' '
+#
+# print(changenum)
 
-for i in range(4):
-    num1 = random.randrange(0,4)
-    if i == num1:
-        tmp = chr(random.randint(10,20))    # 转为字母
-    else:
-        tmp = random.randint(0,9)
-    changenum += str(tmp)+' '
+# os模块
+import os
 
-print(changenum)
+# print(os.getcwd())              # 获取当前路径
+#
+# os.chdir("C:\Desktop")          # 切换目录
+# os.curdir                       # 等同Linux的.
+# os.pardir                       # 等同Linux的..
+# os.makedirs("C:\\a\\b\\c")      # 递归创建目录
+# os.removedirs("Path")           # 递归删除‘空’目录
+#
+# os.mkdir("Path")                # 单独创建目录
+# os.rmdir("Path")                # 删除指定目录
+
+# print(os.listdir('..'))         # 等同Linux的ls
+# os.remove()                     # 移除一个文件
+# os.rename()                     # 重命名目录/文件
+# print(os.stat('test'))          # 获取目录/文件信息
+
+print(os.sep)                   # 查看当前平台的路径分隔符
