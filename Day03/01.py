@@ -22,3 +22,13 @@ import time,datetime
 # print(datetime.datetime.now())        # 查看当前时间
 
 import random
+print(random.randint(1,5))              # 随机1-5之间的数
+print(random.randrange(5))              # 随机0-4之间的数
+print(random.choice('hello'))           # 从后面的值中随机打印一个(可以是元组、列表)
+print(random.choice([1,2,3,4]))         # 从后面的值中随机打印一个(可以是元组、列表)
+
+print(random.uniform(1,5))              # 1-5区间内随机打印
+
+tt = [1,2,3,4,5]
+random.shuffle(tt)                      # 打乱原有顺序，每次都不一样(洗牌功能)
+print(tt)
