@@ -82,19 +82,30 @@ __author__ = "Alien"
 #     print(i)
 
 # 序列化一个字典
-import json
+# import json
+#
+# a = {'name':'Alien','age':23}
+#
+# f = open("tojson.txt",'w')
+# f.write(json.dumps(a))
+# f.close()
+#
+# # 反序列化一个字典
+# f = open("tojson.txt",'r')
+# date = json.loads(f.read())
+#
+# print(date['age'])
 
-a = {'name':'Alien','age':23}
 
-f = open("tojson.txt",'w')
-f.write(json.dumps(a))
-f.close()
-
-# 反序列化一个字典
-f = open("tojson.txt",'r')
-date = json.loads(f.read())
-
-print(date['age'])
-
-
-
+# def bb(y):
+#     return y
+#
+# a = {
+#     '1':bb('x'),
+#     '2':bb('c')
+# }
+# print(a)
+# x = input('>>')
+# if x in a:
+#     print()
+#     a[x]
