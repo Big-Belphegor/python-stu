@@ -67,4 +67,40 @@ import os
 # os.rename()                     # 重命名目录/文件
 # print(os.stat('test'))          # 获取目录/文件信息
 
-print(os.sep)                   # 查看当前平台的路径分隔符
+# print(os.sep)                   # 查看当前平台的路径分隔符
+# print(os.linesep)               # 打印当前系统的换行符
+# print(os.environ)               # 打印环境变量
+# print(os.name)                  # 系统名
+
+# sys模块
+# import sys
+# print(sys.argv)                 # 获取参数
+# print(sys.version)              # 版本
+
+# shutil模块
+import shutil
+
+# f1 = open("01.py",encoding="utf-8")
+# f2 = open("02",'w',encoding="utf-8")
+# shutil.copyfileobj(f1,f2)       # 拷贝f1到f2文件，注意：文件编码要一直
+#
+# shutil.copyfile("01.py","03")   # 拷贝01.py到03文件，注意：该方法不需要提前创建文件
+
+# shutil.copymode(src,dat)        # 只拷贝源文件的权限
+# shutil.copytree("test1","test2")    # 递归拷贝目录
+# shutil.rmtree("test2")              # 删除递归目录
+# shutil.move(src,dat)                # 移动递归文件
+# shutil.make_archive("压缩包","zip","F:\python-stu\Day01")      # 当前目录下创建压缩包(压缩整个目录)，格式：包名+压缩形式+被压缩文件路径
+
+
+# import zipfile
+#
+# z = zipfile.ZipFile("压缩包2.zip",'w')     # 压缩单独/个别文件
+# z.write("01.py")
+# z.close()
+#
+# z = zipfile.ZipFile("压缩包2.zip",'r')     # 解压刚才的包
+# z.extractall()
+# z.close()
+
+import shelve
