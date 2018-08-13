@@ -128,4 +128,9 @@ import shutil
 # s.update(b"Alien")      # 更新一个要加密的字符串
 # print(s.digest())       # 打印sha1加密后的字符串，注意：sha512为最安全加密，但是运算占用大
 
+# c = hashlib.md5()
+# c.update("天王盖地虎".encode(encoding="utf-8"))  # 汉字加密需要指定encod
+# print(c.digest())
+
+import hmac
 
