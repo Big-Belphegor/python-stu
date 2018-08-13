@@ -116,5 +116,3 @@ import shutil
 # 读取shelev_test
 # print(d.get("name"))
 # print(d.get("obj"))
-
-
