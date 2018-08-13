@@ -12,6 +12,6 @@ for body in head:               # 获取第二层的标签头及标签属性
     for i in body:              # 获取第三层的标签头及标签属性
         print(i.tag, i.text)
 
-只遍历year节点
+# 只遍历year节点
 for node in head.iter('year'):  # 获取第二层标签头为‘year’
     print(node.tag, node.text)
