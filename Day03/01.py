@@ -103,4 +103,18 @@ import shutil
 # z.extractall()
 # z.close()
 
-import shelve
+# import shelve
+# d = shelve.open('shelve_test')
+# 写入到shelev_test
+# info = {"Name":"Alien","age":23}
+# obj = ['1','2','3']
+#
+# d["name"] = info
+# d["obj"] = obj
+#
+# d.close()
+# 读取shelev_test
+# print(d.get("name"))
+# print(d.get("obj"))
+
+
