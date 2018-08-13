@@ -119,4 +119,13 @@ import shutil
 # print(d.get("obj"))
 
 # hashlib模块(加密)
-import hashlib
+# import hashlib
+# m = hashlib.md5()
+# m.update(b"Hi!")        # 更新一个要加密的字符串
+# print(m.digest())       # 打印md5加密后的字符串
+#
+# s = hashlib.sha1()
+# s.update(b"Alien")      # 更新一个要加密的字符串
+# print(s.digest())       # 打印sha1加密后的字符串，注意：sha512为最安全加密，但是运算占用大
+
+
