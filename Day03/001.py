@@ -119,7 +119,7 @@ import shutil
 # print(d.get("obj"))
 
 # hashlib模块(加密)
-# import hashlib
+import hashlib
 # m = hashlib.md5()
 # m.update(b"Hi!")        # 更新一个要加密的字符串
 # print(m.digest())       # 打印md5加密后的字符串
@@ -129,8 +129,11 @@ import shutil
 # print(s.digest())       # 打印sha1加密后的字符串，注意：sha512为最安全加密，但是运算占用大
 
 # c = hashlib.md5()
-# c.update("天王盖地虎".encode(encoding="utf-8"))  # 汉字加密需要指定encod
+# c.update("天王盖地虎".encode(encoding="utf-8"))                # 汉字加密需要指定encod
 # print(c.digest())
 
+# 消息加密(加密过程快)
 import hmac
-
+# h = hmac.new(b"123456","这是锁".encode(encoding="gbk"))        # 格式：hmac.new(b'key','消息'.encode(encoding='xxx')
+# print(h.digest())           # 十进制加密
+# print(h.hexdigest())        # 十六进制加密
