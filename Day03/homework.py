@@ -5,25 +5,18 @@ __author__ = "Alien"
 import re
 
 def add(x,y):
-    n = x+y
-    return n
+    return x+y
 
 def reduce(x,y):
-    n = x-y
-    return n
+    return x-y
 
 def ride(x,y):
-    n = x*y
-    return n
+    return x*y
 
 def chufa(x,y):
-    n = x/y
-    return n
-res = re.search("\(.+\)","2*2+(1+2)+((1+2)-5)")
-print(res)
+    return x/y
 
-
-# def Calculator():
-#     form = input("输入算数式：")
-#     while True:
-#         re.search("\(.+\)",form)
+def Calculator():
+    form = input("输入算数式：")
+    while True:
+        re.search("\(.+\)",form)
