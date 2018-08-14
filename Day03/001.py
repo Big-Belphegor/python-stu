@@ -161,3 +161,7 @@ import re
 # rse = re.findall("abc|ABC","ABC123abc123")
 # print(rse)
 
+rse = re.search("(?P<province>[0-9]{2})(?P<city>[0-9]{2})(?P<area>[0-9]{2})(?P<birthday>[0-9]{8})","213601198908016666").groupdict()
+print(rse)
+
+
