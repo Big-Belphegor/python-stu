@@ -161,7 +161,10 @@ import re
 # rse = re.findall("abc|ABC","ABC123abc123")
 # print(rse)
 
-rse = re.search("(?P<province>[0-9]{2})(?P<city>[0-9]{2})(?P<area>[0-9]{2})(?P<birthday>[0-9]{8})","213601198908016666").groupdict()
-print(rse)
+# rse = re.search("(?P<province>[0-9]{2})(?P<city>[0-9]{2})(?P<area>[0-9]{2})(?P<birthday>[0-9]{8})","213601198908016666").groupdict()
+# print(rse)                                            # 身份证号分组
 
-
+# rse = re.split("[0-9]","abc123abc123")                # 切割式正则查询
+# print(rse)
+# rse = re.split("[0-9]+","abc123abc123")
+# print(rse)
