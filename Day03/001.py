@@ -137,3 +137,27 @@ import hmac
 # h = hmac.new(b"123456","这是锁".encode(encoding="gbk"))        # 格式：hmac.new(b'key','消息'.encode(encoding='xxx')
 # print(h.digest())           # 十进制加密
 # print(h.hexdigest())        # 十六进制加密
+
+
+# 正则表达式
+import re
+# rse = re.match("^L","Lee123")                         # match是从字符串的头部看是搜索
+# print(rse)
+# rse = re.match("^Lee\d","Lee123")
+# print(rse)
+# rse = re.match("^Lee\d+","Lee123")
+# print(rse)
+# rse = re.match("abc|ABC","ABC123abc123").group()
+# print(rse)
+
+# rse = re.search("[0-9].+","Lee123Lee123")             # search是从字符串任意处为开头查找(但是遵循从左到右的方向)
+# print(rse)
+
+# rse = re.search("(abc){2}(\|\=){2}","abcabc|=|=123")
+# print(rse)
+
+# rse = re.findall("[0-9]","Lee123Lee123")              # findall是从字符串全局进行查找
+# print(rse)
+# rse = re.findall("abc|ABC","ABC123abc123")
+# print(rse)
+
