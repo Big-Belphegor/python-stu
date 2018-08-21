@@ -1,7 +1,7 @@
 __author__ = "Alien"
 # 类的继承
 
-class People(object):           # 父类
+class People(object):           # 父类，新式类写法
     def __init__(self,name):
         self.name = name
 

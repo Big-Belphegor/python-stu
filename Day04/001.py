@@ -1,6 +1,6 @@
 __author__ = "Alien"
 # 类的基础知识
-class test:
+class test:     # 经典类定义方式
     n = 123 # 类变量
     def __init__(self,name,sex,age,n,secret):
         # 构造函数
