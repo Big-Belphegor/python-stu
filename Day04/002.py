@@ -1,7 +1,7 @@
 __author__ = "Alien"
 # 类的继承
 
-class People(object):
+class People(object):           # 父类
     def __init__(self,name):
         self.name = name
 
@@ -11,11 +11,11 @@ class People(object):
     def sleep(self):
         print("%s is sleeping" % self.name)
 
-class Man(People):
+class Man(People):              # 子类(继承的People）
     def run(self):
         print("%s run!" % self.name)
 
-class Woman(People):
+class Woman(People):            # 子类(继承的People）
     def buy(self):
         print("%s buy!" % self.name)
 
@@ -32,3 +32,5 @@ m3 = Woman("Hy")
 m3.eat()
 m3.sleep()
 m3.buy()
+
+# 注意：类Man和类Woman不发生任何关系，但是它们都可以同时继承People类下的方法
