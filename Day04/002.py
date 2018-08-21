@@ -19,6 +19,15 @@ class Woman(People):            # 子类(继承的People）
     def buy(self):
         print("%s buy!" % self.name)
 
+class xxx(People):
+    def __init__(self,name,xxxfun):
+        People.__init__(self,name)
+        self.xxxfun = xxxfun
+
+    def testfun(self):
+        print("%s 用户获得特殊属性：%s" % (self.name,self.xxxfun))
+
+
 m1 = People("Alien")
 m1.eat()
 m1.sleep()
@@ -33,4 +42,8 @@ m3.eat()
 m3.sleep()
 m3.buy()
 
+m4 = xxx("Tom","遁地术")
+m4.eat()
+m4.sleep()
+m4.testfun()
 # 注意：类Man和类Woman不发生任何关系，但是它们都可以同时继承People类下的方法
