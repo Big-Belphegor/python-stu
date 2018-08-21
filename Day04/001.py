@@ -18,7 +18,7 @@ class test:
             Other n: %s
         ''' % (self.name,self.sex,self.age,self.n))
 
-    def __secretfun(self):
+    def __secretfun(self):      # 私有方法，只能内部使用的类功能
         print("外部看不到的变量 %s 和 方法" % self.__secret)
 
     def __del__(self):
