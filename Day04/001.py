@@ -1,5 +1,5 @@
 __author__ = "Alien"
-
+# 类的基础知识
 class test:
     n = 123 # 类变量
     def __init__(self,name,sex,age,n,secret):
