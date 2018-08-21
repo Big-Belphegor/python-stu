@@ -19,9 +19,13 @@ class Woman(People):            # 子类(继承的People）
     def buy(self):
         print("%s buy!" % self.name)
 
-class xxx(People):
+class xxx(People):              # 给子类单独添加属性
     def __init__(self,name,xxxfun):
-        People.__init__(self,name)
+        # 方法一
+        # People.__init__(self,name)
+        # self.xxxfun = xxxfun
+        # 方法二(优于方法一)
+        super(xxx,self).__init__(name)
         self.xxxfun = xxxfun
 
     def testfun(self):
