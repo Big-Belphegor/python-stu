@@ -2,9 +2,9 @@ __author__ = "Alien"
 
 class test:
     n = 123 # 类变量
-    def __init__(self,name,sex,age):    # 实例变量
+    def __init__(self,name,sex,age):
         # 构造函数
-        self.name = name
+        self.name = name        # 实例变量
         self.sex = sex
         self.age = age
 
