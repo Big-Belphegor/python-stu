@@ -1,7 +1,8 @@
 __author__ = "Alien"
 
 class test:
-    def __init__(self,name,sex,age):
+    n = 123 # 类变量
+    def __init__(self,name,sex,age):    # 实例变量
         # 构造函数
         self.name = name
         self.sex = sex
@@ -17,3 +18,4 @@ class test:
 print(test)
 a = test('Alien','M','24')
 a.profile()
+print(test.n)
