@@ -64,3 +64,12 @@ class Student(SchoolMember):
         print("%s has paid tuition for %s." % (self.name,amount))
 
 
+school = School('菜鸟集团','天堂大街-250')
+
+teacher_001 = Teacher('Jsion',24,'M',15000,'PythonDevOps')
+teacher_002 = Teacher('Tom',25,'M',20000,'Linux-system')
+
+student_001 = Student('Alien',19,'M',8001,'PythonDevOps')
+student_002 = Student('Hy',19,'F',8002,'Linux-system')
+
+
