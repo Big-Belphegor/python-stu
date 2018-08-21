@@ -1,7 +1,5 @@
 __author__ = "Alien"
 # 类的多继承
-
-
 class Af:                           # 父类1
     def __init__(self,name):
         self.name = name
