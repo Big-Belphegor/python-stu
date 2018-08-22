@@ -73,3 +73,16 @@ student_001 = Student('Alien',19,'M',8001,'PythonDevOps')
 student_002 = Student('Hy',19,'F',8002,'Linux-system')
 
 
+school.hire(teacher_001)
+school.hire(teacher_002)
+school.enroll(student_001)
+school.enroll(student_002)
+
+print(school.students)
+print(school.staffs)
+
+school.staffs[0].teach()
+
+for i in school.students:
+    i.pay_tuition(15000)
+
