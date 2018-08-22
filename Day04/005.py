@@ -90,9 +90,9 @@ for i in school.students:
 class Animal(object):
     def __init__(self,name):
         self.name = name
-
-    def talk(self):
-        pass
+    @staticmethod
+    def talk(obj):
+        obj.talk()
 
 class Cat(Animal):
     def talk(self):
@@ -107,3 +107,14 @@ b = Dog("gg")
 
 a.talk()
 b.talk()
+
+# 多态的实现：
+# 方法一
+# def all(obj):
+#     obj.talk()
+#
+# all(a)
+# all(b)
+# 方法二(将上面的函数放到父类里)
+Animal.talk(a)
+Animal.talk(b)
