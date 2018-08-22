@@ -72,7 +72,7 @@ teacher_002 = Teacher('Tom',25,'M',20000,'Linux-system')
 student_001 = Student('Alien',19,'M',8001,'PythonDevOps')
 student_002 = Student('Hy',19,'F',8002,'Linux-system')
 
-
+teacher_001.tell()
 school.hire(teacher_001)
 school.hire(teacher_002)
 school.enroll(student_001)
