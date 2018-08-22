@@ -86,3 +86,24 @@ school.staffs[0].teach()
 for i in school.students:
     i.pay_tuition(15000)
 
+# 多态：一个接口多种实现
+class Animal(object):
+    def __init__(self,name):
+        self.name = name
+
+    def talk(self):
+        pass
+
+class Cat(Animal):
+    def talk(self):
+        print("Miao~")
+
+class Dog(Animal):
+    def talk(self):
+        print("Wang~")
+
+a = Cat("mm")
+b = Dog("gg")
+
+a.talk()
+b.talk()
