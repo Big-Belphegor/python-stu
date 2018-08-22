@@ -21,8 +21,10 @@ class School(object):
         # 添加学生信息
         if obj_student.addr == "上海":
             self.students_Shanghai.append(obj_student)
+            # print(self.students_Shanghai)
         elif obj_student.addr == "北京":
             self.students_Beijing.append(obj_student)
+            # print(self.students_Beijing)
 
 class Classpro(School):
     # 班级级别
@@ -69,13 +71,18 @@ class Teacher(Classpro):
         # 打印老师下学生信息
         if self.addr == "上海":
             stu_list = self.students_Shanghai
+            print('''
+                    ----- Info of stduents -----
+                    学生名单： %s
+                    学生人数： %s
+                    ''' % (stu_list, len(stu_list)))
         else:
             stu_list = self.students_Beijing
-        print('''
-        ----- Info of stduents -----
-        学生名单： %s
-        学生人数： %s
-        ''' % (stu_list,len(stu_list)))
+            print('''
+                    ----- Info of stduents -----
+                    学生名单： %s
+                    学生人数： %s
+                    ''' % (stu_list, len(stu_list)))
 
 class Student(Classpro):
     # 学生级别
@@ -95,10 +102,10 @@ class Student(Classpro):
         学号： %s
         '''% (self.name,self.addr,self.course,self.classname,self.name,self.students_id))
 
-    def pay(self,obj_pay):
+    def pay(self):
         # 课程学费支付(由于为练习程序，就以打印价格体现)
-        if obj_pay.course in self.class_cost:
-            print("您需要的学费为：%s" % self.class_cost[obj_pay.course])
+        if self.course in self.class_cost:
+            print("您需要的学费为：%s" % self.class_cost[self.course])
         else:
             print("信息错误，请确认后重试！")
 
@@ -202,6 +209,7 @@ while True:
                 stu_name = input('姓名：')
                 stu1 = Student(stu_addr,stu_course,stu_classname,stu_student_id,stu_name)
                 s1.enroll(stu1)
+                stu1.check_stuprofile()
 
             elif x == '2':
                 stu1.pay()
