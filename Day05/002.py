@@ -16,11 +16,13 @@ __author__ = "Alien"
 #     a[3]
 #     b['haha']
 #
-# except (IndexError) as e:
+# except IndexError as e:
 #     print('Index不存在')
 #
 # except KeyError as e:
 #     print('Key不存在')
 #
-# except Exception as e:              # 不管什么错误都接直接except
+# except Exception as e:                # 不管什么错误都接直接except
 #     print('出错了，具体是啥不知道')
+# except (IndexError,KeyError) as e:    # 可以处理多个错误
+#     print('没有key也没有index')
