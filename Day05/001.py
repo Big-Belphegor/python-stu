@@ -45,6 +45,10 @@ __author__ = "Alien"
 # 注意：此时的d.fun1默认是不能删除的(del d.fun1)
 
 # 反射
+def fun2(*args):
+    # print('This is fun2：%s' % self.name)      # 也可以是self，直接调用实例参数
+    print('This is fun2：%s' % args)
+
 class test4(object):
     def __init__(self,name):
         self.name = name
@@ -56,7 +60,11 @@ class test4(object):
 e = test4('Hy')
 e1 = input('>>').strip()
 
-print(hasattr(e,e1))        # hasattr 判断一个对象‘e’中是否有对应字符串的方法映射
+if hasattr(e,e1):               # hasattr 判断一个对象‘e’中是否有对应'e1'变量中的字符串的方法映射
+    a = getattr(e,e1)           # getattr 根据输入的字符串，去对象'e'中查找对应的方法的内存地址
+    a()                         # 运行匹配到的内存地址
+else:
+    setattr(e,e1,fun2)
+    # fun2(e)                   # 将对象传入
+    fun2('惊喜不')
 
-fun2 = getattr(e,e1)        # getattr 根据输入的字符串，去对象'e'中查找对应的方法的内存地址
-fun2()                      # 运行匹配到的内存地址
