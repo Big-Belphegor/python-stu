@@ -44,7 +44,7 @@ __author__ = "Alien"
 # d.fun1
 # 注意：此时的d.fun1默认是不能删除的(del d.fun1)
 
-# 反射
+# 反射 （完成用户输入的字符串判断及调用对应的函数）
 # 部分一(hasattr 和 getattr)
 # class test4(object):
 #     def __init__(self,name):
