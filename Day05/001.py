@@ -17,15 +17,28 @@ __author__ = "Alien"
 
 
 # 类方法
-class test2(object):
-    y = 'a'
-    def __init__(self,y):
-        self.y = y
+# class test2(object):
+#     y = 'a'
+#     def __init__(self,y):
+#         self.y = y
+#
+#     @classmethod        # 作用：只能调用同名类变量，不能调用实例变量
+#     def fun1(self):
+#         print('%s and %s' % (self.y,'B'))
+#
+#
+# c = test2('A')
+# c.fun1()
 
-    @classmethod        # 作用：只能调用同名类变量，不能调用实例变量
+# 属性方法
+class test3(object):
+    def __init__(self,z):
+        self.z = z
+
+    @property     # 作用：把一个方法变成一个静态属性
     def fun1(self):
-        print('%s and %s' % (self.y,'B'))
+        print('%s and %s' % (self.z,'B'))
 
-
-c = test2('A')
-c.fun1()
+d = test3('AAA')
+# d.fun1()        # 加括号会报错
+d.fun1
