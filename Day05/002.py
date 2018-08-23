@@ -22,7 +22,9 @@ __author__ = "Alien"
 # except KeyError as e:
 #     print('Key不存在')
 #
-# except Exception as e:                # 不管什么错误都接直接except
-#     print('出错了，具体是啥不知道')
 # except (IndexError,KeyError) as e:    # 可以处理多个错误
 #     print('没有key也没有index')
+#
+# except Exception as e:                # 抓位置错误
+#     print('出错了，具体是啥不知道')
+
