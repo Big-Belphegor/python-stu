@@ -60,11 +60,11 @@ class test4(object):
 e = test4('Hy')
 e1 = input('>>').strip()
 
-if hasattr(e,e1):               # hasattr 判断一个对象‘e’中是否有对应'e1'变量中的字符串的方法映射
-    a = getattr(e,e1)           # getattr 根据输入的字符串，去对象'e'中查找对应的方法的内存地址
+if hasattr(e,e1):               # hasattr 判断一个对象‘e’中是否有对应'e1'变量中的字符串的方法映射，格式：hasattr(obj,str)
+    a = getattr(e,e1)           # getattr 根据输入的字符串，去对象'e'中查找对应的方法的内存地址,格式：getattr(obj,str)
     a()                         # 运行匹配到的内存地址
 else:
-    setattr(e,e1,fun2)
+    setattr(e,e1,fun2)          # 通过字符串的形式，将类外的方法映射到‘类里’,格式：setattr(obj,str,fun)
     # fun2(e)                   # 将对象传入
     fun2('惊喜不')
 
