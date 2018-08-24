@@ -9,7 +9,7 @@ server.listen()                     # 开始监听端口
 print('电话连接中...')
 
 conn,addr = server.accept()         # 双方端口连接成功
-print('182xxxx88968来电了')
+print('182xxxx8888来电了')
 
 data = conn.recv(1024)              # 接受连接数据，设置大小为1024字节
 print('recv:',data)                 # 打印接受到的数据
