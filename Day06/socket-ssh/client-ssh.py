@@ -2,7 +2,7 @@ __author__ = "Alien"
 import socket
 client = socket.socket()
 
-client.connect(('localhost',6666))
+client.connect(('192.168.181.155',6666))
 
 while True:
     cmd = input('>>:').strip()
