@@ -19,9 +19,14 @@ while True:
         print('Total transmission:',len(cmd_res))       # 打印返回结果的大小
         if len(cmd_res) == 0:
             cmd_res = "Not Output!"
-
-        conn.send(str(len(cmd_res.encode())).encode('utf-8'))   # 发送命令返回的数据总大小
-        conn.send(cmd_res.encode('utf-8'))                      # 发送命令返回的数据给client端
+        # 下面的操作容易发生粘包
+        # conn.send(str(len(cmd_res.encode())).encode('utf-8'))   # 发送命令返回的数据总大小
+        # conn.send(cmd_res.encode('utf-8'))                      # 发送命令返回的数据给client端
+        # 解决方法两种：
+        conn.send(str(len(cmd_res.encode())).encode('utf-8'))
+        # time.sleep(0.5)                                         # 最简单粗暴，但并没有太多实际意义
+        client_sleep = conn.recv(1024)                            # 做一次接受，这样会自动断开下次的发送
+        conn.send(cmd_res.encode('utf-8'))
         print('Over')
 
 server.close()                      # 关闭连接

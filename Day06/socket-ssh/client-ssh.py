@@ -10,6 +10,7 @@ while True:
     client.send(cmd.encode('utf-8'))    # 发送命令给server端
     cmd_res_size = client.recv(1024)    # 接受数据总大小
     print('Total transmission:',cmd_res_size)
+    client.send(b"That's ok")           # 用来解决粘包现象，发送任意一段数据来断开连续的send
     received_size = 0                   # 定义接受一次数据的大小(用于计算接受到的数据大小)
     received_data = b''                 # 定义接受数据内容(用于将server端发送的数据转为Binay)
     while received_size < int(cmd_res_size.decode()):
