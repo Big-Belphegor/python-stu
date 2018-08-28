@@ -21,7 +21,7 @@ while True:
             cmd_res = "Not Output!"
 
         conn.send(str(len(cmd_res.encode())).encode('utf-8'))   # 发送命令返回的数据总大小
-        conn.send(cmd_res.encode('utf-8'))                      # 发送命令返回的数据
+        conn.send(cmd_res.encode('utf-8'))                      # 发送命令返回的数据给client端
         print('Over')
 
-server.close()
+server.close()                      # 关闭连接
