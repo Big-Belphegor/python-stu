@@ -24,13 +24,14 @@ import paramiko
 # print(result.decode())
 
 # SSH-SCP
-# transport = paramiko.Transport(('192.168.181.155',22))      # 与服务器建立连接
-# transport.connect(username='test',password='123123')        # 连接传输用户
-#
-# sftp = paramiko.SFTPClient.from_transport(transport)        # 建立文件传输通道
-# # 上传文件，格式：xxx.put('本地文件路径+文件名' ‘远程文件路径’)
-# sftp.put('C:\\Users\\dxw-user\\Desktop\\01.png','/home/test/01.png')
-# # 下载文件，格式：xxx.get('远程文件路径' ‘本地保存路径+文件名’)
-# sftp.get('/home/test/tt','C:\\Users\\dxw-user\\Desktop\\tt_new')
-# transport.close()
+transport = paramiko.Transport(('192.168.181.155',22))      # 与服务器建立连接
+transport.connect(username='test',password='123123')        # 连接传输用户
+
+sftp = paramiko.SFTPClient.from_transport(transport)        # 建立文件传输通道
+# 上传文件，格式：xxx.put('本地文件路径+文件名' ‘远程文件路径’)
+sftp.put('C:\\Users\\dxw-user\\Desktop\\01.png','/home/test/01.png')
+# 下载文件，格式：xxx.get('远程文件路径' ‘本地保存路径+文件名’)
+sftp.get('/home/test/tt','C:\\Users\\dxw-user\\Desktop\\tt_new')
+transport.close()
+
 
