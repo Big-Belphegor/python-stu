@@ -3,7 +3,7 @@ __author__ = "Alien"
 import paramiko
 # 实例化ssh客户端
 ssh = paramiko.SSHClient()
-ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())       # 跳过Key认证
 # 连接远程节点
 ssh.connect(hostname='192.168.181.155',port=22,username='test',password='123123')
 # 执行命令
