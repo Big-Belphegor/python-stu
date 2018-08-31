@@ -16,7 +16,7 @@ import threading,time
 # run(2)
 
 
-# 用类实现多线程
+# 用类实现多线程（有些麻烦，可以使用上面的写法）
 class MyThread(threading.Thread):
     def __init__(self,n):
         super(MyThread,self).__init__()
