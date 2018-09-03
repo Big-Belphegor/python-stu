@@ -1,6 +1,6 @@
 __author__ = "Alien"
 import time,threading,queue
-
+# 创建一个“生产者”和两个“消费者”，实现通过队列同时对两个用户“服务”。下面是一个小模型，供参考：
 q = queue.Queue()
 
 def Boss():
