@@ -21,12 +21,12 @@ def lighter():
 
 def car(name):
     while True:
-        if event.is_set():
+        if event.is_set():      # 判断标志位是否被设定
             print("[%s] running" % name)
             time.sleep(1)
         else:
             print("[%s] sees red light, wait!" % name)
-            event.wait()
+            event.wait()        # 等待标志位被设定
             print("\033[34l1m[%s] green light is on, start going \033[0m" % name)
 
 light = threading.Thread(target=lighter)
