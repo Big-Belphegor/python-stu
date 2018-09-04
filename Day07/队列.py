@@ -1,5 +1,9 @@
 __author__ = "Alien"
 # Queue队列(消息队列)
+# 作用：
+# 1、解耦
+# 2、提高处理效率
+
 import queue
 
 q = queue.Queue()       # 生成对象，默认不限制队列大小
