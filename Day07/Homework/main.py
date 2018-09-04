@@ -7,7 +7,7 @@ __author__ = "Alien"
 import paramiko,threading
 import group1,group2
 
-
+print(group1.host)
 
 class all(object):
     def __init__(self,groupname):
@@ -15,6 +15,7 @@ class all(object):
         # self.hostIP = []
         # self.username = []
         # self.password = []
+        print(self.groupname.host)
 
     def check_host(self):
         for x in self.groupname.host:
@@ -62,7 +63,8 @@ obj = input('''
 3. Put/Get文件
 ''')
 if obj == '1':
-    all.check_host('group1')
+    gn = str(input('主机组名：'))
+    t1 = all(gn)
+    t1.check_host()
 
-
-
+# 程序有问题，input交互的参数不能正常插入函数调用
