@@ -70,23 +70,59 @@ import threading,time
 
 # 线程锁
 # 作用：在锁内的线程是独立的，其它线程不能干扰。
-def run(n):
-    lock.acquire()          # 添加锁
-    global num              # (实际中此处可以是一些能够快速运算并得出结果的代码)
+# def run(n):
+#     lock.acquire()          # 添加锁
+#     global num              # (实际中此处可以是一些能够快速运算并得出结果的代码)
+#     num += 1
+#     time.sleep(1)
+#     lock.release()          # 释放锁
+#
+# lock = threading.Lock()     # 创建锁
+# num = 0
+# t_objs = []
+# for i in range(10):
+#     t = threading.Thread(target=run,args=('t-%s' % i,))
+#     t.start()
+#     t_objs.append(t)
+#
+# for t in t_objs:
+#     t.join()
+#
+# print('Over',threading.current_thread())
+# print('Num:',num)
+
+
+# 线程递归锁
+def run():
+    locks.acquire()
+    global num
     num += 1
-    time.sleep(1)
-    lock.release()          # 释放锁
+    locks.release()
+    return num
 
-lock = threading.Lock()     # 创建锁
-num = 0
-t_objs = []
-for i in range(10):
-    t = threading.Thread(target=run,args=('t-%s' % i,))
+def run2():
+    locks.acquire()
+    global num2
+    num2 += 1
+    locks.release()
+    return num2
+
+def run3():
+    locks.acquire()
+    print('run1:',run())
+
+    print('run2:',run2())
+
+    locks.release()
+
+num,num2 = 0,0
+locks= threading.RLock()                # 创建递归锁
+for i in range(1):
+    t = threading.Thread(target=run3)
     t.start()
-    t_objs.append(t)
 
-for t in t_objs:
-    t.join()
-
-print('Over',threading.current_thread())
-print('Num:',num)
+while threading.active_count() != 1:
+    pass
+else:
+    print('-----Over-----')
+    print(num,num2)
