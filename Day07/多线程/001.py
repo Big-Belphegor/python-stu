@@ -67,4 +67,3 @@ for i in range(50):
     t_obj.append(t)
 print('当前活动线程个数:%s' % threading.active_count())
 print('程序共费时:%s 当前活动线程个数:%s' % (time.time()-start_time,threading.active_count()))
-# 注意： 当子线程变成守护线程时，主线程不会等待其是否运行结束；反之，主线程会默认在执行结束后添加join功能等待所有线程结束后在退出程序。
