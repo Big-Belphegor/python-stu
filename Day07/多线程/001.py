@@ -53,17 +53,40 @@ import threading,time
 
 # 创建守护线程，将子线程转化为守护线程。
 # 效果：主线程不会关心子线程(守护线程)是否运行完毕，只会等待父线程(非守护线程)结束后直接结束。
-start_time = time.time()
-t_obj = []
-def run(n):
-    print(n)
-    time.sleep(2)
-    print('%s Done' % n)
+# start_time = time.time()
+# t_obj = []
+# def run(n):
+#     print(n)
+#     time.sleep(2)
+#     print('%s Done' % n)
+#
+# for i in range(50):
+#     t = threading.Thread(target=run,args=('t-%s' % i,))
+#     t.setDaemon(True)         # 将当前线程变成守护线程,注意：一定要在start之前
+#     t.start()
+#     t_obj.append(t)
+# print('当前活动线程个数:%s' % threading.active_count())
+# print('程序共费时:%s 当前活动线程个数:%s' % (time.time()-start_time,threading.active_count()))
 
-for i in range(50):
+# 线程锁
+# 作用：在锁内的线程是独立的，其它线程不能干扰。
+def run(n):
+    lock.acquire()          # 添加锁
+    global num              # (实际中此处可以是一些能够快速运算并得出结果的代码)
+    num += 1
+    time.sleep(1)
+    lock.release()          # 释放锁
+
+lock = threading.Lock()     # 创建锁
+num = 0
+t_objs = []
+for i in range(10):
     t = threading.Thread(target=run,args=('t-%s' % i,))
-    t.setDaemon(True)         # 将当前线程变成守护线程,注意：一定要在start之前
     t.start()
-    t_obj.append(t)
-print('当前活动线程个数:%s' % threading.active_count())
-print('程序共费时:%s 当前活动线程个数:%s' % (time.time()-start_time,threading.active_count()))
+    t_objs.append(t)
+
+for t in t_objs:
+    t.join()
+
+print('Over',threading.current_thread())
+print('Num:',num)
