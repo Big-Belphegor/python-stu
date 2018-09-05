@@ -41,11 +41,11 @@ import threading,time
 # for i in range(50):
 #     t = threading.Thread(target=run,args=('t-%s' % i,))
 #     t.start()
-#     t_obj.append(t)
+#     t_obj.append(t)     # 将启动的线程写入到一个列表里，为了不影响下一个要启动的线程
 # print('当前活动线程个数:%s' % threading.active_count())
 #
 # for x in t_obj:
-#     x.join()            # 功能：让主线程等待子线程执行完毕后再运行
+#     x.join()            # 功能：让主线程等待子线程执行完毕后再运行，目的就是让所有的线程都执行结束后在结束主线程
 #
 # #注意：程序本身就会占用一个线程，这个线程称之为主线程。所以本实例，其实是并行这运行了51个线程。
 # print('程序共费时:%s 当前活动线程个数:%s' % (time.time()-start_time,threading.active_count()))
