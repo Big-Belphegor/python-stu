@@ -51,7 +51,8 @@ import threading,time
 # print('程序共费时:%s 当前活动线程个数:%s' % (time.time()-start_time,threading.active_count()))
 
 
-# 创建守护线程，就是将子线程转化为守护线程
+# 创建守护线程，将子线程转化为守护线程。
+# 效果：主线程不会关心子线程(守护线程)是否运行完毕，只会等待父线程(非守护线程)结束后直接结束。
 start_time = time.time()
 t_obj = []
 def run(n):
@@ -61,7 +62,7 @@ def run(n):
 
 for i in range(50):
     t = threading.Thread(target=run,args=('t-%s' % i,))
-    # t.setDaemon(True)         # 将当前线程变成守护线程，可已通过注释/解注释该行进行测试
+    t.setDaemon(True)         # 将当前线程变成守护线程,注意：一定要在start之前
     t.start()
     t_obj.append(t)
 print('当前活动线程个数:%s' % threading.active_count())
