@@ -93,36 +93,56 @@ import threading,time
 
 
 # 线程递归锁
-def run():
-    locks.acquire()
-    global num
-    num += 1
-    locks.release()
-    return num
+# def run():
+#     locks.acquire()
+#     global num
+#     num += 1
+#     locks.release()
+#     return num
+#
+# def run2():
+#     locks.acquire()
+#     global num2
+#     num2 += 1
+#     locks.release()
+#     return num2
+#
+# def run3():
+#     locks.acquire()
+#     print('run1:',run())
+#
+#     print('run2:',run2())
+#
+#     locks.release()
+#
+# num,num2 = 0,0
+# locks= threading.RLock()                # 创建递归锁
+# for i in range(1):
+#     t = threading.Thread(target=run3)
+#     t.start()
+#
+# while threading.active_count() != 1:
+#     pass
+# else:
+#     print('-----Over-----')
+#     print(num,num2)
 
-def run2():
-    locks.acquire()
-    global num2
-    num2 += 1
-    locks.release()
-    return num2
 
-def run3():
-    locks.acquire()
-    print('run1:',run())
+# 线程信号量
+# 作用：限制同时运行的线程数量，并且有优化作用，比如：实例中是一次允许5个线程，当5个线程中有3个先完成了那么就会再允许3个锁外等待的线程。
+def run(n):
+    lock.acquire()          # 添加锁
+    time.sleep(1)
+    print('Num:',n)
+    lock.release()          # 释放锁
 
-    print('run2:',run2())
-
-    locks.release()
-
-num,num2 = 0,0
-locks= threading.RLock()                # 创建递归锁
-for i in range(1):
-    t = threading.Thread(target=run3)
+lock = threading.BoundedSemaphore(5)     # 创建锁,最多只能有5个线程
+num = 0
+t_objs = []
+for i in range(10):
+    t = threading.Thread(target=run,args=('t-%s' % i,))
     t.start()
+    t_objs.append(t)
 
-while threading.active_count() != 1:
-    pass
-else:
-    print('-----Over-----')
-    print(num,num2)
+for t in t_objs:
+    t.join()
