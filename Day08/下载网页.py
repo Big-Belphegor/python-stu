@@ -6,8 +6,8 @@ import gevent,time
 
 # def uu(url):
 #     print('Get: %s' % url)
-#     resp = request.urlopen(url)
-#     data = resp.read()
+#     resp = request.urlopen(url)               # 访问url
+#     data = resp.read()                        # 下载页面数据
 #     print('%d bytes received from %s.' % (len(data),url))
 #
 # uu('https://www.baidu.com')
