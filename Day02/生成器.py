@@ -4,5 +4,7 @@ n = 0
 s = (x*2 for x in range(10))
 while n<10:
     # print(s.__next__())
-    print(next(s))              # 等同上面的方法，建议使用该方法
+    print(next(s))              # 等同上行，建议使用该方式
     n +=1
+
+
