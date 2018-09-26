@@ -20,13 +20,14 @@ import logging,time
 # logging.warning('warning message')
 # logging.error('error message')
 # logging.critical('critical message')
+# 注意：basicConfig是一次性的，不能重复调用
 
 # 将日志写入到文件
 logging.basicConfig(level=logging.DEBUG,
                     format="%(asctime)s %(name)s %(levelname)s %(message)s",
-                    datefmt='%Y-%m-%d  %H:%M:%S %a',
+                    datefmt='%Y-%m-%d  %H:%M:%S %a ',
                     filename='t1.log',
-                    filemode='w',
+                    filemode='a',
                     )
 logging.debug('debug')
 logging.info('info')
