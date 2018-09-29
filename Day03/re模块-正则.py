@@ -1,6 +1,6 @@
 __author__ = "Alien"
 import re
-
+######### 部分一：元字符 #########
 # # 正则符号'.'，只能代指一个字符
 # r = re.findall('w..l','Hello world')
 # r2 = re.findall('w.l','Hello world')
@@ -80,8 +80,30 @@ import re
 #
 # # 正则符号'()'，将内部的字符串变为一个组
 # print(re.findall('(ab)|A','abcd'))
+##分组使用
+# a = re.search('(?P<n1>a{3})(?P<n2>b{3})','aaabbbccc')       # re.search('(?P<组名>要匹配的内容)(...)','字符串')
+# print(a.group())
+# print(a.group('n1'))    # 打印n1匹配到的结果
+# print(a.group('n2'))    # 打印n2匹配到的结果
 
-a = re.search('(?P<n1>a{3})(?P<n2>b{3})','aaabbbccc')       # re.search('(?P<组名>要匹配的内容)(...)','字符串')
-print(a.group())
-print(a.group('n1'))    # 打印n1匹配到的结果
-print(a.group('n2'))    # 打印n2匹配到的结果
+
+######### 部分二：re模块内置方法 #########
+
+# findall：所有结果都返回到一个列表中
+# search：返回匹配到的第一个对象以对象的方式返回，可通过group()打印返回结果
+
+# match：只在字符串开始匹配
+a = re.match('a','bac')
+a2 = re.match('a','abc')
+print(a)            # 无法匹配
+print(a2.group())   # 匹配到字符'a'与search一样需要使用group获取
+
+# split：分割
+a = re.split(':','Name: Lee')               # 用':'分割
+a2 = re.split('[:,_]','Name: Alien_Lee')    # 先用':'分割，再用'_'分割剩下的部分
+print(a)
+print(a2)
+
+# sub：替换匹配内容
+a = re.sub('A.*n','Lee','Alien')
+print(a)
