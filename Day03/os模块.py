@@ -23,14 +23,14 @@ import os
 #
 # print(os.system('dir'))                 # 执行系统命令
 # print(os.environ)                       # 获取环境变量
-# print(os.path.abspath('./001.py'))      # 获取某个文件的绝对路径
-# print(os.path.split('F:\python-stu\Day03\001.py'))      # 将路径进行分割为文件路及文件名
-# print(os.path.dirname('F:\python-stu\Day03\001.py'))    # 分割出该绝对路径的目录
-# print(os.path.exists('001.py'))                         # 判断path是否存在
-# print(os.path.isabs('F:\python-stu\Day03\001.py'))      # 判断path是否为绝对路径
-# print(os.path.isfile('F:\python-stu\Day03\\001.py'))    # 判断文件是否存在
+# print(os.path.abspath('./复习.py'))      # 获取某个文件的绝对路径
+# print(os.path.split('F:\python-stu\Day03\复习.py'))      # 将路径进行分割为文件路及文件名
+# print(os.path.dirname('F:\python-stu\Day03\复习.py'))    # 分割出该绝对路径的目录
+# print(os.path.exists('复习.py'))                         # 判断path是否存在
+# print(os.path.isabs('F:\python-stu\Day03\复习.py'))      # 判断path是否为绝对路径
+# print(os.path.isfile('F:\python-stu\Day03\\复习.py'))    # 判断文件是否存在
 # print(os.path.isdir('F:\python-stu\Day03'))             # 判断目录是否存在
 print(os.path.join('my','\\name','\\is','Alien'))       # 合并路径
-print(os.path.getatime('001.py'))                       # 获取目录或文件的最后存取时间
-print(os.path.getmtime('001.py'))                       # 获取目录或文件的最后修改时间
+print(os.path.getatime('复习.py'))                       # 获取目录或文件的最后存取时间
+print(os.path.getmtime('复习.py'))                       # 获取目录或文件的最后修改时间
 
