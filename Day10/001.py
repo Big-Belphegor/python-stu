@@ -1,19 +1,19 @@
 __author__ = "Alien"
-class test():
-    a = 1
-    def b(self):
-        print('Test')
-
-# def test():
+# class test():
 #     a = 1
-
-f1 = test()                 # 将类传进一个变量中
-if hasattr(f1,'a'):         # 格式：hasattr(变量,字符串) hasattr作用：判断变量里是否有字符串内的内容，有的话返回True否则False
-    func = getattr(f1,'a')  # 格式：getattr(变量,字符串) getattr作用：运行变量里和字符串对等的函数
-    print(func)
-else:
-    print('Error')
-
+#     def b(self):
+#         print('Test')
+#
+# # def test():
+# #     a = 1
+#
+# f1 = test()                 # 将类传进一个变量中
+# if hasattr(f1,'a'):         # 格式：hasattr(变量,字符串) hasattr作用：判断变量里是否有字符串内的内容，有的话返回True否则False
+#     func = getattr(f1,'a')  # 格式：getattr(变量,字符串) getattr作用：运行变量里和字符串对等的函数
+#     print(func)
+# else:
+#     print('Error')
+#
 
 # class My_api():
 #     def __init__(self,obj,*args,**kwargs):
@@ -32,3 +32,4 @@ else:
 #
 # a = My_api('a','Json')
 # print(a.get())
+

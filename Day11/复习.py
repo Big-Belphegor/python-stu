@@ -153,18 +153,127 @@ __author__ = "Alien"
 # print('My dog name is ' + you_dog.name)
 # print('My dog is ' + str(you_dog.age) + ' years old.')
 
-class Car():
-    def __init__(self,make,model,year):
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odometer = 0               # 设定默认值，此属性不需要再上面特殊定义
+# class Car():
+#     def __init__(self,make,model,year):
+#         self.make = make
+#         self.model = model
+#         self.year = year
+#         self.odometer = 0               # 设定默认值，此属性不需要再上面特殊定义
+#
+#     def read_odometer(self):
+#         print('This car has ' + str(self.odometer) + ' miles on it')
+#
+#     def update_odometer(self,mileage):  # 通过方法修改属性
+#         self.odometer = mileage
+#
+#     def other_function(self):
+#         pass
 
-    def read_odometer(self):
-        print('This car has ' + str(self.odometer) + ' miles on it')
+# one_car = Car('Audi','R8','2018')
+# one_car.read_odometer()
+#
+# # 修改类中属性的值
+# one_car.odometer = 200              # 方法一，通过实例直接访问属性并修改
+# one_car.read_odometer()
+#
+#
+# one_car.update_odometer(600)        # 方法二，通过类里的方法修改属性
+# one_car.read_odometer()
 
-    def other_function(self):
-        pass
+# # 继承
+# class ElectricCar(Car):
+#     '''Car的子类，演示继承'''
+#
+#     def __init__(self,make,model,year):         # 设定与父类完全相同的属性
+#         super().__init__(make,model,year)       # 关联父类的所有属性
+#         self.battery_size = 70                  # 给子类定义属性
+#
+#     def describe_battery(self):                 # 定义方法
+#         print('This car battery size: %s ' % self.battery_size)
+#
+# two_car = ElectricCar('Audi','A6','2017')
+# two_car.read_odometer()
+# two_car.describe_battery()
 
-one_car = Car('Audi','R8','2018')
-one_car.read_odometer()
+# 练习
+class Restaurant():
+
+    def __init__(self,restaurant_name,cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+
+    def describe_restaurant(self):
+        print('Restaurant Name: ' + self.restaurant_name + '\nCuisine Type: ' + self.cuisine_type)
+
+    def open_restaurant(self):
+        print('Working...')
+
+    def set_number_served(self,full_numbers):
+        self.number_served = full_numbers
+        return self.number_served
+
+    def increment_nuber_served(self,increase_number):
+        self.number_served += increase_number
+
+
+class User():
+
+    def __init__(self,first_name,last_name,age,sex):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+        self.sex = sex
+        self.login_attempts = 0
+
+    def describe_user(self):
+        print('''
+        Name: %s%s
+        Age: %s
+        Sex: %s
+        ''' % (self.first_name,self.last_name,self.age,self.sex))
+
+    def greet_user(self):
+        print('Welcome %s' % self.first_name)
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+        return self.login_attempts
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+        return self.login_attempts
+
+class Admin(User):
+    def __init__(self,first_name,last_name,age,sex):
+        super().__init__(first_name,last_name,age,sex)
+        self.privileges = Privileges()
+
+    def show_info(self):
+        print('''
+        =========Admin info=========
+        ID: %s %s
+        Message:
+        \t- Age: %s
+        \t- Sex: %s
+        Privileges: %s
+        ''' % (self.first_name,self.last_name,self.age,self.sex,str(self.privileges.show_privileges())))
+
+class Privileges():
+    def __init__(self):
+        self.privileges = ['Can add post', 'Can delete post', 'Can ban user']
+
+    def show_privileges(self):
+        print(self.privileges)
+
+# u1 = User('Alien','Lee','24','m')
+# login_attempts = u1.increment_login_attempts()
+# print(login_attempts)
+# login_attempts = u1.reset_login_attempts()
+# print(login_attempts)
+
+admin = Admin('Alien','Lee','24','M')
+admin.show_info()
+
+test = Privileges()
+test.show_privileges()
