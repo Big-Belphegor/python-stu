@@ -134,21 +134,37 @@ __author__ = "Alien"
 # make_pizza('d')
 
 # 类相关示例
-class Dog():                            # 创建类
-    def __init__(self,name,age):        # 创建方法
-        self.name = name                # 定义属性
-        self.age = age
+# class Dog():                            # 创建类
+#     def __init__(self,name,age):        # 创建方法
+#         self.name = name                # 定义属性
+#         self.age = age
+#
+#     def sit(self):
+#         print('%s is now sitting' % self.name)
+#
+#     def roll_over(self):
+#         print('%s rolled over!' % self.name)
+#
+# my_dog = Dog('GG',2)                    # 创建实力
+# you_dog = Dog('LL',3)
+#
+# print('My dog name is ' + my_dog.name)  # 调用方法
+# print('My dog is ' + str(my_dog.age) + ' years old.')
+# print('My dog name is ' + you_dog.name)
+# print('My dog is ' + str(you_dog.age) + ' years old.')
 
-    def sit(self):
-        print('%s is now sitting' % self.name)
+class Car():
+    def __init__(self,make,model,year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer = 0               # 设定默认值，此属性不需要再上面特殊定义
 
-    def roll_over(self):
-        print('%s rolled over!' % self.name)
+    def read_odometer(self):
+        print('This car has ' + str(self.odometer) + ' miles on it')
 
-my_dog = Dog('GG',2)                    # 创建实力
-you_dog = Dog('LL',3)
+    def other_function(self):
+        pass
 
-print('My dog name is ' + my_dog.name)  # 调用方法
-print('My dog is ' + str(my_dog.age) + ' years old.')
-print('My dog name is ' + you_dog.name)
-print('My dog is ' + str(you_dog.age) + ' years old.')
+one_car = Car('Audi','R8','2018')
+one_car.read_odometer()
