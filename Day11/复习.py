@@ -118,9 +118,37 @@ __author__ = "Alien"
 # for user in confirmed_users:
 #     print(user.title())
 
-def build_person(frist_name,last_name,age=''):
-    person = {'frist':frist_name,'last':last_name,'age':age}
-    return person
+# def build_person(frist_name,last_name,age=''):
+#     person = {'frist':frist_name,'last':last_name,'age':age}
+#     return person
+#
+# musician = build_person('Alien','Lee')
+# print(musician)
 
-musician = build_person('Alien','Lee')
-print(musician)
+# def make_pizza(*args):
+#     print('\nMaking a pizza with the following toppings:')
+#     for top in args:
+#         print('- %s' % top)
+#
+# make_pizza('a','b','c')
+# make_pizza('d')
+
+# 类相关示例
+class Dog():                            # 创建类
+    def __init__(self,name,age):        # 创建方法
+        self.name = name                # 定义属性
+        self.age = age
+
+    def sit(self):
+        print('%s is now sitting' % self.name)
+
+    def roll_over(self):
+        print('%s rolled over!' % self.name)
+
+my_dog = Dog('GG',2)                    # 创建实力
+you_dog = Dog('LL',3)
+
+print('My dog name is ' + my_dog.name)  # 调用方法
+print('My dog is ' + str(my_dog.age) + ' years old.')
+print('My dog name is ' + you_dog.name)
+print('My dog is ' + str(you_dog.age) + ' years old.')
