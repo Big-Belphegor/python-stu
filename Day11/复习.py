@@ -335,19 +335,22 @@ __author__ = "Alien"
 
 
 # JSON相关的完整实例
-import json
+# import json
+#
+# filename = 'user_list.json'
+#
+# try:
+#     with open(filename) as file:
+#         user = json.load(file)
+#
+# except FileNotFoundError:
+#     with open(filename,'w') as file:
+#         user = input('Please input your name: ')
+#         user2 = input('Please input your name: ')
+#         json.dump(user,file)
+#         json.dump(user2,file)
+#         print('Success!')
+# else:
+#     print('Welcome back, %s!' % user)
 
-filename = 'user_list.json'
-
-try:
-    with open(filename) as file:
-        user = json.load(file)
-
-except FileNotFoundError:
-    with open(filename,'a') as file:
-        user = input('Please input your name: ')
-        json.dump(user,file)
-        print('Success!')
-else:
-    print('Welcome back, %s!' % user)
 
