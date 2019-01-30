@@ -196,76 +196,78 @@ __author__ = "Alien"
 # two_car.describe_battery()
 
 # 练习
-class Restaurant():
-
-    def __init__(self,restaurant_name,cuisine_type):
-        self.restaurant_name = restaurant_name
-        self.cuisine_type = cuisine_type
-        self.number_served = 0
-
-    def describe_restaurant(self):
-        print('Restaurant Name: ' + self.restaurant_name + '\nCuisine Type: ' + self.cuisine_type)
-
-    def open_restaurant(self):
-        print('Working...')
-
-    def set_number_served(self,full_numbers):
-        self.number_served = full_numbers
-        return self.number_served
-
-    def increment_nuber_served(self,increase_number):
-        self.number_served += increase_number
-
-
-class User():
-
-    def __init__(self,first_name,last_name,age,sex):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-        self.sex = sex
-        self.login_attempts = 0
-
-    def describe_user(self):
-        print('''
-        Name: %s%s
-        Age: %s
-        Sex: %s
-        ''' % (self.first_name,self.last_name,self.age,self.sex))
-
-    def greet_user(self):
-        print('Welcome %s' % self.first_name)
-
-    def increment_login_attempts(self):
-        self.login_attempts += 1
-        return self.login_attempts
-
-    def reset_login_attempts(self):
-        self.login_attempts = 0
-        return self.login_attempts
-
-class Admin(User):
-    def __init__(self,first_name,last_name,age,sex):
-        super().__init__(first_name,last_name,age,sex)
-        self.privileges = Privileges()
-
-    def show_info(self):
-        print('''
-        =========Admin info=========
-        ID: %s %s
-        Message:
-        \t- Age: %s
-        \t- Sex: %s
-        Privileges: %s
-        ''' % (self.first_name,self.last_name,self.age,self.sex,str(self.privileges.show_privileges())))
-
-class Privileges():
-    def __init__(self):
-        self.privileges = ['Can add post', 'Can delete post', 'Can ban user']
-
-    def show_privileges(self):
-        print(self.privileges)
-        return ''
+# class Restaurant():
+#
+#     def __init__(self,restaurant_name,cuisine_type):
+#         self.restaurant_name = restaurant_name
+#         self.cuisine_type = cuisine_type
+#         self.number_served = 0
+#
+#     def describe_restaurant(self):
+#         print('Restaurant Name: ' + self.restaurant_name + '\nCuisine Type: ' + self.cuisine_type)
+#
+#     def open_restaurant(self):
+#         print('Working...')
+#
+#     def set_number_served(self,full_numbers):
+#         self.number_served = full_numbers
+#         return self.number_served
+#
+#     def increment_nuber_served(self,increase_number):
+#         self.number_served += increase_number
+#
+#
+# class User():
+#
+#     def __init__(self,first_name,last_name,age,sex):
+#         self.first_name = first_name
+#         self.last_name = last_name
+#         self.age = age
+#         self.sex = sex
+#         self.login_attempts = 0
+#
+#     def describe_user(self):
+#         print('''
+#         Name: %s%s
+#         Age: %s
+#         Sex: %s
+#         ''' % (self.first_name,self.last_name,self.age,self.sex))
+#
+#     def greet_user(self):
+#         print('Welcome %s' % self.first_name)
+#
+#     def increment_login_attempts(self):
+#         self.login_attempts += 1
+#         return self.login_attempts
+#
+#     def reset_login_attempts(self):
+#         self.login_attempts = 0
+#         return self.login_attempts
+#
+# class Privileges():
+#     def __init__(self):
+#         self.privileges = ['Can add post', 'Can delete post', 'Can ban user']
+#
+#     def show_privileges(self):
+#         x = ''
+#         for privileges in self.privileges:
+#             x += '\t\t\t- ' + privileges + '\n'
+#         return x
+#
+# class Admin(User):
+#     def __init__(self,first_name,last_name,age,sex):
+#         super().__init__(first_name,last_name,age,sex)
+#         self.privileges = Privileges()
+#
+#     def show_info(self):
+#         print('''
+#         =========Admin info=========
+#         ID: %s %s
+#         Message:
+#         \t- Age: %s
+#         \t- Sex: %s
+#         Privileges: \n%s
+#         ''' % (self.first_name,self.last_name,self.age,self.sex,str(self.privileges.show_privileges())))
 
 # u1 = User('Alien','Lee','24','m')
 # login_attempts = u1.increment_login_attempts()
@@ -273,8 +275,33 @@ class Privileges():
 # login_attempts = u1.reset_login_attempts()
 # print(login_attempts)
 
-admin = Admin('Alien','Lee','24','M')
-admin.show_info()
+# admin = Admin('Alien','Lee','24','M')
+# admin.show_info()
 
-test = Privileges()
-test.show_privileges()
+# 文件和异常
+# file_path = '/etc/nginx/nginx.conf' # 其它目录下文件的导入需要指定绝对路径
+# with open(file_path) as nginx:
+#     f = nginx
+#     print(f)
+#
+# with open('file.txt') as file:      # 打开file.txt文件，给予别名file
+#     '''示例一'''
+#     # f = file.read()                 # 将file全部导出，赋值给f
+#     # print(f.rstrip())               # 打印f并去除尾部空行
+#     '''示例二'''
+#     # for line in file:               # 逐行读取
+#     #     print(line.rstrip())
+#     '''示例三'''
+#     # lines = file.readlines()        # 将文件内容以列表的形式全部导出
+#     # for line in lines:
+#     #     print(line.rstrip())
+#     # print(type(lines))
+#     '''示例四'''
+#     lines = file.readlines()        # 使用文件的内容
+#     num = ''
+#     for line in lines:
+#         num += line.strip()         # strip()用于去除空格
+#         print(type(num))
+#     print(num)
+
+
