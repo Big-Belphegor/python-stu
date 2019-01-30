@@ -306,16 +306,30 @@ __author__ = "Alien"
 # message = 'I really like dogs'
 # print(message.replace('dogs','money'))        # 字符串替换函数
 
-filename = 'file_two.txt'
-with open(filename,'w') as file:        # 'w'写入文件，如果文件不存在直接创建、文件存在会先清空再写入
-    file.write('============\n')
-    file.write('Hello world!\n')
-    file.write('============')
+# filename = 'file_two.txt'
+# with open(filename,'w') as file:        # 'w'写入文件，如果文件不存在直接创建、文件存在会先清空再写入
+#     file.write('============\n')
+#     file.write('Hello world!\n')
+#     file.write('============')
+#
+# with open(filename,'a') as file:        # 'a'附加文件，在文件末尾处添加写入的内容，如果文件不存在会直接创建
+#     file.write('\n>> END <<\n')
+#
+# with open(filename,'r+') as file:
+#     file.write('test')
+#     lines = file.readlines()
+#     print(lines)
 
-with open(filename,'a') as file:        # 'a'附加文件，在文件末尾处添加写入的内容，如果文件不存在会直接创建
-    file.write('\n>> END <<\n')
+# try-except-else
+# while True:
+#     one_num = input("First number:")
+#     if one_num == 'q':
+#         break
+#     two_num = input("Second number:")
+#     try:                                        # try下编写可能出现异常的代码部分
+#         x = int(one_num) / int(two_num)
+#     except ZeroDivisionError:                   # except下指定异常类型，当try部分代码发生异常且与异常类型匹配则运行except下代码
+#         print("You cat't divide by zero!")
+#     else:                                       # 当try下代码部分没出现任何异常，则执行else下代码
+#         print(x)
 
-with open(filename,'r+') as file:
-    file.write('test')
-    lines = file.readlines()
-    print(lines)
