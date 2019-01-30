@@ -2,7 +2,7 @@ __author__ = "Alien"
 import unittest                                 # python自带的测试模块
 from name_function import get_formatted_name    # 导入要测试的模块/函数
 
-class NameTestCase(unittest.TestCase):          # 任意定义一个类，但必须继承unittest.TestCase
+class Testname(unittest.TestCase):          # 任意定义一个类，但必须继承unittest.TestCase
     '''测试name_function.py'''
 
     def test_first_last_name(self):             # 类内只需要创建一个方法，此方法必须以test开头
