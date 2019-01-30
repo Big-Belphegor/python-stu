@@ -284,24 +284,38 @@ __author__ = "Alien"
 #     f = nginx
 #     print(f)
 #
-# with open('file.txt') as file:      # 打开file.txt文件，给予别名file
+# with open('file.txt') as file:      # 打开file.txt文件，给予别名file. 注意：不指定打开方式时，默认是只读模式'r'
 #     '''示例一'''
-#     # f = file.read()                 # 将file全部导出，赋值给f
-#     # print(f.rstrip())               # 打印f并去除尾部空行
+#     f = file.read()                 # 将file全部导出，赋值给f
+#     print(f.rstrip())               # 打印f并去除尾部空行
 #     '''示例二'''
-#     # for line in file:               # 逐行读取
-#     #     print(line.rstrip())
+#     for line in file:               # 逐行读取
+#         print(line.rstrip())
 #     '''示例三'''
-#     # lines = file.readlines()        # 将文件内容以列表的形式全部导出
-#     # for line in lines:
-#     #     print(line.rstrip())
-#     # print(type(lines))
+#     lines = file.readlines()        # 将文件内容以列表的形式全部导出
+#     for line in lines:
+#         print(line.rstrip())
+#     print(type(lines))
 #     '''示例四'''
 #     lines = file.readlines()        # 使用文件的内容
 #     num = ''
 #     for line in lines:
 #         num += line.strip()         # strip()用于去除空格
-#         print(type(num))
 #     print(num)
 
+# message = 'I really like dogs'
+# print(message.replace('dogs','money'))        # 字符串替换函数
 
+filename = 'file_two.txt'
+with open(filename,'w') as file:        # 'w'写入文件，如果文件不存在直接创建、文件存在会先清空再写入
+    file.write('============\n')
+    file.write('Hello world!\n')
+    file.write('============')
+
+with open(filename,'a') as file:        # 'a'附加文件，在文件末尾处添加写入的内容，如果文件不存在会直接创建
+    file.write('\n>> END <<\n')
+
+with open(filename,'r+') as file:
+    file.write('test')
+    lines = file.readlines()
+    print(lines)
