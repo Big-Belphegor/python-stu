@@ -265,6 +265,7 @@ class Privileges():
 
     def show_privileges(self):
         print(self.privileges)
+        return ''
 
 # u1 = User('Alien','Lee','24','m')
 # login_attempts = u1.increment_login_attempts()
