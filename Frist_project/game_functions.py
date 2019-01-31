@@ -13,13 +13,18 @@ def check_events(ship):
         #     # 向右移动飞船
         #     ship.rect.centerx += 1
 
-        elif event.type == pygame.KEYDOWN:          # 此方法为持续按或单次按右键都会移动
+        elif event.type == pygame.KEYDOWN:          # 此方法为持续或单击都会移动
             if event.key == pygame.K_RIGHT:
                 ship.moving_right = True
+            elif event.key == pygame.K_LEFT:
+                ship.moving_left = True
 
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
                 ship.moving_right = False
+            elif event.key == pygame.K_LEFT:
+                ship.moving_left = False
+
 
 def update_screen(ai_settings,screen,ship):
     screen.fill(ai_settings.bg_color)   # 每次循环都重绘屏幕

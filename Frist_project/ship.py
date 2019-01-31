@@ -9,6 +9,7 @@ class Ship():
         self.screen = screen
         # 移动标志
         self.moving_right = False
+        self.moving_left = False
 
         # 加载飞船图片获取其它外界矩形
         self.image = pygame.image.load('images/ship1.bmp')
@@ -28,3 +29,5 @@ class Ship():
 
         if self.moving_right:
             self.rect.centerx += 1
+        elif self.moving_left:
+            self.rect.centerx -= 1
