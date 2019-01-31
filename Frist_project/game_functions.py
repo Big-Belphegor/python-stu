@@ -2,6 +2,23 @@ __author__ = "Alien"
 import sys
 import pygame
 from bullet import Bullet
+from alien import Alien
+
+def create_fleet(ai_settings,screen,aliens):
+    '''创建外星人群'''
+
+    alien = Alien(ai_settings,screen)
+    alien_width = alien.rect.width
+    available_space_x = ai_settings.screen_width - 2 * alien_width
+    number_aliens_x = int(available_space_x / (2 * alien_width))
+
+    # 创建第一行外星人
+    for alien_number in range(number_aliens_x):
+        # 创建一个外星人并将其加入当前行
+        alien = Alien(ai_settings,screen)
+        alien.x = alien_width + 2 * alien_width * alien_number
+        alien.rect.x = alien.x
+        aliens.add(alien)
 
 def check_keydown_events(event,ai_settings,screen,ship,bullets):
     '''按键按下时执行的操作'''
@@ -43,13 +60,13 @@ def check_events(ai_settings,screen,ship,bullets):
         elif event.type == pygame.KEYUP:
             check_keyup_events(event, ship)
 
-def update_screen(ai_settings,screen,ship,alien,bullets):
+def update_screen(ai_settings,screen,ship,aliens,bullets):
     '''初始化窗口状态'''
     screen.fill(ai_settings.bg_color)   # 每次循环都重绘屏幕
     for bullet in bullets.sprites():    # 要在之前
         bullet.draw_bullet()
     ship.blitme()                       # 将飞船绘制在屏幕上
-    alien.blitme()                      # 将外星人绘制在屏幕上
+    aliens.draw(screen)                      # 将外星人绘制在屏幕上
     pygame.display.flip()               # 让最近绘制的屏幕可见
 
 def update_bullets(bullets):
@@ -60,3 +77,4 @@ def update_bullets(bullets):
     for bullet in bullets.copy():
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
+
