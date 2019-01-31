@@ -22,7 +22,7 @@ def run_game():
     bullets = Group()                               # 创建子弹群组
     aliens = Group()                                # 创建外星人群
 
-    gf.create_fleet(ai_settings,screen,aliens)
+    gf.create_fleet(ai_settings,screen,ship,aliens)
 
     while True:
         gf.check_events(ai_settings,screen,ship,bullets)
