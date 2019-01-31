@@ -4,9 +4,11 @@ import pygame
 class Ship():
     '''初始化飞船并设置位置'''
 
-    def __init__(self,screen):
+    def __init__(self,ai_settings,screen):
         # 初始化飞船位置
         self.screen = screen
+        # 设置center中存储小数值
+        self.ai_settings = ai_settings
         # 移动标志
         self.moving_right = False
         self.moving_left = False
@@ -16,9 +18,10 @@ class Ship():
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
-        # 将没艘新飞船放在屏幕底部中央
+        # 将飞船放在屏幕底部中央
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
+        self.center = float(self.rect.centerx)          # 由于rect只获取整数部分数值所以重新定义一个浮点型属性
 
     def blitme(self):
         '''在指定位置绘制飞船'''
@@ -26,8 +29,10 @@ class Ship():
 
     def update(self):
         '''根据移动标志调整飞船位置'''
-
         if self.moving_right:
-            self.rect.centerx += 1
+            # self.rect.centerx += 1
+            self.center += self.ai_settings.ship_speed_factor
         if self.moving_left:                # 此处用if是为了防止用户同时按住左右键时右键优先级高
-            self.rect.centerx -= 1
+            # self.rect.centerx -= 1
+            self.center -= self.ai_settings.ship_speed_factor
+        self.rect.centerx = self.center
