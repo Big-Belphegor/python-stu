@@ -15,7 +15,9 @@ class Ship():
 
         # 加载飞船图片获取其它外界矩形
         self.image = pygame.image.load('images/ship1.bmp')
+        # 图像矩形数据，就是图像的边缘范围
         self.rect = self.image.get_rect()
+        # 屏幕矩形数据，就是屏幕的边缘范围
         self.screen_rect = screen.get_rect()
 
         # 将飞船放在屏幕底部中央
@@ -29,6 +31,7 @@ class Ship():
 
     def update(self):
         '''根据移动标志调整飞船位置'''
+        # self.rect.right表示图像的最右边数据，left则代表最左边数据
         if self.moving_right and self.rect.right < self.screen_rect.right:
             # self.rect.centerx += 1
             self.center += self.ai_settings.ship_speed_factor
