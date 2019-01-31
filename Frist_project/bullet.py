@@ -8,8 +8,8 @@ class Bullet(Sprite):
     def __init__(self,ai_settings,screen,ship):
         '''在飞船所处的位置创建一个子弹对象'''
 
-        # super(Bullet,self).__init__()     # 适用于python2.x但是3.x下也不报错
-        super().__init__(Bullet)
+        super(Bullet,self).__init__()     # 适用于python2.x但是3.x下也不报错
+        # super().__init__(Bullet)
         self.screen = screen
 
         # 在(0,0)处创建一个子弹矩形，而后再设置正确的位置

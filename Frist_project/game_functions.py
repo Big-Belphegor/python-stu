@@ -41,9 +41,8 @@ def check_events(ai_settings,screen,ship,bullets):
 
 def update_screen(ai_settings,screen,ship,bullets):
     '''初始化窗口状态'''
-
     screen.fill(ai_settings.bg_color)   # 每次循环都重绘屏幕
-    ship.blitme()                       # 将飞船绘制在屏幕上
-    pygame.display.flip()               # 让最近绘制的屏幕可见
     for bullet in bullets.sprites():
         bullet.draw_bullet()
+    ship.blitme()                       # 将飞船绘制在屏幕上
+    pygame.display.flip()               # 让最近绘制的屏幕可见
