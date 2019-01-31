@@ -11,8 +11,7 @@ def check_keydown_events(event,ai_settings,screen,ship,bullets):
     elif event.key == pygame.K_LEFT:
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
-        new_bullet = Bullet(ai_settings,screen,ship)
-        bullets.add(new_bullet)
+        fire_bullet(ai_settings, screen, ship, bullets)
 
 def check_keyup_events(event,ship):
     '''按键弹起时执行的操作'''
@@ -21,6 +20,11 @@ def check_keyup_events(event,ship):
         ship.moving_right = False
     elif event.key == pygame.K_LEFT:
         ship.moving_left = False
+
+def fire_bullet(ai_settings,screen,ship,bullets):
+    if len(bullets) < ai_settings.bullets_allowed:
+        new_bullet = Bullet(ai_settings, screen, ship)
+        bullets.add(new_bullet)
 
 def check_events(ai_settings,screen,ship,bullets):
     '''监视键盘和鼠标'''
@@ -46,3 +50,12 @@ def update_screen(ai_settings,screen,ship,bullets):
         bullet.draw_bullet()
     ship.blitme()                       # 将飞船绘制在屏幕上
     pygame.display.flip()               # 让最近绘制的屏幕可见
+
+def update_bullets(bullets):
+    '''更新子弹的位置，并删除已消失的子弹'''
+
+    bullets.update()
+    # 删除已消失的子弹
+    for bullet in bullets.copy():
+        if bullet.rect.bottom <= 0:
+            bullets.remove(bullet)
