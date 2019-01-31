@@ -12,6 +12,8 @@ def check_keydown_events(event,ai_settings,screen,ship,bullets):
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
         fire_bullet(ai_settings, screen, ship, bullets)
+    elif event.key == pygame.K_q:
+        sys.exit()
 
 def check_keyup_events(event,ship):
     '''按键弹起时执行的操作'''
@@ -36,10 +38,8 @@ def check_events(ai_settings,screen,ship,bullets):
         # elif event.type == pygame.KEYDOWN:        # 此方法为每按一次右键移动一下
         #     # 向右移动飞船
         #     ship.rect.centerx += 1
-
         elif event.type == pygame.KEYDOWN:          # 此方法为持续或单击都会移动
             check_keydown_events(event,ai_settings,screen,ship,bullets)
-
         elif event.type == pygame.KEYUP:
             check_keyup_events(event, ship)
 
