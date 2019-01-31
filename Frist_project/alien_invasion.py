@@ -18,10 +18,7 @@ def run_game():
 
     while True:
         gf.check_events()
-
-        screen.fill(bg_color)   # 每次循环都重绘屏幕
-        ship.blitme()           # 将飞船绘制在屏幕上
-        pygame.display.flip()   # 让最近绘制的屏幕可见
+        gf.update_screen(ai_settings,screen,ship)
 
 
 run_game()
