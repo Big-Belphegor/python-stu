@@ -43,12 +43,13 @@ def check_events(ai_settings,screen,ship,bullets):
         elif event.type == pygame.KEYUP:
             check_keyup_events(event, ship)
 
-def update_screen(ai_settings,screen,ship,bullets):
+def update_screen(ai_settings,screen,ship,alien,bullets):
     '''初始化窗口状态'''
     screen.fill(ai_settings.bg_color)   # 每次循环都重绘屏幕
     for bullet in bullets.sprites():    # 要在之前
         bullet.draw_bullet()
     ship.blitme()                       # 将飞船绘制在屏幕上
+    alien.blitme()                      # 将外星人绘制在屏幕上
     pygame.display.flip()               # 让最近绘制的屏幕可见
 
 def update_bullets(bullets):
