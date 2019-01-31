@@ -29,5 +29,5 @@ class Ship():
 
         if self.moving_right:
             self.rect.centerx += 1
-        elif self.moving_left:
+        if self.moving_left:                # 此处用if是为了防止用户同时按住左右键时右键优先级高
             self.rect.centerx -= 1
