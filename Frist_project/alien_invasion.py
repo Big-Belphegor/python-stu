@@ -17,7 +17,8 @@ def run_game():
     ship = Ship(screen)                             # 创建一个飞船
 
     while True:
-        gf.check_events()
+        gf.check_events(ship)
+        ship.update()
         gf.update_screen(ai_settings,screen,ship)
 
 

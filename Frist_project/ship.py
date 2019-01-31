@@ -7,6 +7,8 @@ class Ship():
     def __init__(self,screen):
         # 初始化飞船位置
         self.screen = screen
+        # 移动标志
+        self.moving_right = False
 
         # 加载飞船图片获取其它外界矩形
         self.image = pygame.image.load('images/ship1.bmp')
@@ -20,3 +22,9 @@ class Ship():
     def blitme(self):
         '''在指定位置绘制飞船'''
         self.screen.blit(self.image,self.rect)
+
+    def update(self):
+        '''根据移动标志调整飞船位置'''
+
+        if self.moving_right:
+            self.rect.centerx += 1
