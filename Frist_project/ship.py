@@ -5,6 +5,7 @@ class Ship():
     '''初始化飞船并设置位置'''
 
     def __init__(self,ai_settings,screen):
+
         # 初始化飞船位置
         self.screen = screen
         # 设置center中存储小数值
@@ -27,10 +28,12 @@ class Ship():
 
     def blitme(self):
         '''在指定位置绘制飞船'''
+
         self.screen.blit(self.image,self.rect)
 
     def update(self):
         '''根据移动标志调整飞船位置'''
+
         # self.rect.right表示图像的最右边数据，left则代表最左边数据
         if self.moving_right and self.rect.right < self.screen_rect.right:
             # self.rect.centerx += 1
