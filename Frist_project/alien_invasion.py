@@ -17,7 +17,7 @@ def run_game():
     bg_color = (ai_settings.bg_color)               # 定义背景色，RGB格式
 
     ship = Ship(ai_settings,screen)                 # 创建一个飞船
-    alien = Alien(ai_settings,screen)               # 创建一个外星人
+    # alien = Alien(ai_settings,screen)               # 创建一个外星人
 
     bullets = Group()                               # 创建子弹群组
     aliens = Group()                                # 创建外星人群
@@ -27,7 +27,8 @@ def run_game():
     while True:
         gf.check_events(ai_settings,screen,ship,bullets)
         ship.update()
-        gf.update_bullets(bullets)
+        gf.update_bullets(aliens,bullets)
+        gf.update_aliens(ai_settings,aliens)
         gf.update_screen(ai_settings,screen,ship,aliens,bullets)
 
 
