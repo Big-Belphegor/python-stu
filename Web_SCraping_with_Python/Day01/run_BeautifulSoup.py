@@ -1,5 +1,6 @@
 __author__ = "Alien"
 from urllib.request import urlopen
+# 第三方库，Windows/Linux下解压tar包运行python setup.py install即可
 from bs4 import BeautifulSoup
 
 html = urlopen('https://www.pythonscraping.com/pages/page1.html')
