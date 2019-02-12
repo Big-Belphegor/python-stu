@@ -32,10 +32,10 @@ from bs4 import BeautifulSoup
 # 注意：previous_siblings定位最后一行但不需抓取的标签，next_sibling和previous_sibling为匹配单个上面两个为多个。
 
 # 实例四，处理父标签
-html = urlopen('http://www.pythonscraping.com/pages/page3.html')
-bs0bj = BeautifulSoup(html)
-print(bs0bj.find("img",{"src":"../img/gifts/img6.jpg"})\
-      .parent.previous_sibling.get_text())                          # parent/parents是抓取父标签函数
-
-print(bs0bj.find("span",{"class":"excitingNote"},text="Keep your friends guessing!")\
-      .parent.next_sibling.get_text())
+# html = urlopen('http://www.pythonscraping.com/pages/page3.html')
+# bs0bj = BeautifulSoup(html)
+# print(bs0bj.find("img",{"src":"../img/gifts/img6.jpg"})\
+#       .parent.previous_sibling.get_text())                          # parent/parents是抓取父标签函数
+#
+# print(bs0bj.find("span",{"class":"excitingNote"},text="Keep your friends guessing!")\
+#       .parent.next_sibling.get_text())
