@@ -91,7 +91,7 @@ import shutil
 # shutil.copytree("test1","test2")    # 递归拷贝目录
 # shutil.rmtree("test2")              # 删除递归目录
 # shutil.move(src,dat)                # 移动递归文件
-# shutil.make_archive("压缩包","zip","F:\python-stu\Day01")      # 当前目录下创建压缩包(压缩整个目录)，格式：包名+压缩形式+被压缩文件路径
+# shutil.make_archive("压缩包","zip","F:\python-stu\Web_SCraping_with_Python")      # 当前目录下创建压缩包(压缩整个目录)，格式：包名+压缩形式+被压缩文件路径
 
 
 # import zipfile
