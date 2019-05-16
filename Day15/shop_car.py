@@ -10,5 +10,7 @@ saveing=input('Input your money,please >')
 if saveing.isdigit():
     saveing=int(saveing)
 #enumerate能够将列表中数值以索引-值得形式打印，后面的参数1表示让打印的第一个所以从1开始
-for i in enumerate(shop_list,1):
-    print(i)
+# for i in enumerate(shop_list,1):
+#     print(i)
+for x,y in enumerate(shop_list,1):
+    print(x,'>',y)
