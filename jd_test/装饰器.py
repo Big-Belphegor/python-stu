@@ -30,3 +30,22 @@ def Logout():
     print('Looking forward to your next visit.')
 
 Logout()
+
+# 为装饰器添加参数
+def delete_shopping_cart(sp_name=''):           # 设定一个默认值，值为空
+    def set_func(func):
+        def main():
+            func()
+            print('Designated merchandise deleted,the merchandise list: %s' % sp_name)
+        return main
+    return set_func
+
+@delete_shopping_cart('Apple Macbook Pro')      # 为装饰器传入参数
+def purchase_func():
+    print('Your shopping cart list: %s' % '''
+    1.Iphon XS
+    2.Apple Macbook Pro
+    3.Apple Watch
+    ''')
+
+purchase_func()
