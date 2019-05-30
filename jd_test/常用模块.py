@@ -105,20 +105,21 @@ import logging
 # x.critical('=== Trigger Critical ===')
 # x.critical('=== Trigger Critical ===')
 # x.critical('=== Trigger Critical ===')
-
-# 同时在屏幕和文件生成日志内容
-all_log = logging.getLogger()            # 定义总日志实例
-fh = logging.FileHandler('test.log')    # 定义子对象，用于存放日志的文件
-ch = logging.StreamHandler()            # 定义子对象，用于存放屏幕打印的日志
-formatter = logging.Formatter('%(asctime)s %(name)s:%(levelname)s\t%(message)s')    # 定义统一的日志格式，与上面的方法相同
-
-fh.setFormatter(formatter)          # 添加日志格式给fh
-ch.setFormatter(formatter)          # 添加日志格式给ch
-
-all_log.addHandler(fh)               # 将两个子对象添加到logger总日志实例中
-all_log.addHandler(ch)
-all_log.setLevel(logging.DEBUG)      # 修改默认的日志级别
-
-all_log.debug('xxxxxx')              # 测试，对all_log对象写入不同级别的日志
-all_log.warning('xxxxxx')
-
+#
+# # 同时在屏幕和文件生成日志内容
+# all_log = logging.getLogger()            # 定义总日志实例
+# fh = logging.FileHandler('test.log')    # 定义子对象，用于存放日志的文件
+# ch = logging.StreamHandler()            # 定义子对象，用于存放屏幕打印的日志
+# formatter = logging.Formatter('%(asctime)s %(name)s:%(levelname)s\t%(message)s')    # 定义统一的日志格式，与上面的方法相同
+#
+# fh.setFormatter(formatter)          # 添加日志格式给fh
+# ch.setFormatter(formatter)          # 添加日志格式给ch
+#
+# all_log.addHandler(fh)               # 将两个子对象添加到logger总日志实例中
+# all_log.addHandler(ch)
+# all_log.setLevel(logging.DEBUG)      # 修改默认的日志级别
+#
+# all_log.debug('xxxxxx')              # 测试，对all_log对象写入不同级别的日志
+# all_log.warning('xxxxxx')
+#
+# # 更多的信息参考官网：https://docs.python.org/3.4/library/logging.html?highlight=logging#module-logging
