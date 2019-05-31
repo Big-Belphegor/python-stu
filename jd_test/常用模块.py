@@ -123,3 +123,41 @@ import logging
 # all_log.warning('xxxxxx')
 #
 # # 更多的信息参考官网：https://docs.python.org/3.4/library/logging.html?highlight=logging#module-logging
+
+# ConfigParser模块，配置文件模块
+import configparser
+
+
+# # 查看
+# f1 = configparser.ConfigParser()                # 生成实例
+# f1.read('mysql.conf',encoding="utf-8")          # 获取mysql.conf文件到f1对象
+
+# print(f1.sections())                            # 获取所有section节点
+# print(f1.options('mysqld'))                     # 获取指定option内的所有key
+# print(f1.get('mysqld','datadir'))               # 获取指定option-key的值
+# print(f1.items('mysqld'))                       # 获取指定option的所有数据
+
+# # 增加
+# f2 = configparser.ConfigParser()
+#
+# f2.add_section('test')
+# f2['test'] = {
+#     'Username':'Alien',
+#     'Password':'123456'
+# }
+# with open('mysql.conf','a') as configfile:
+#     f2.write(configfile)
+
+# # 修改
+# f3 = configparser.ConfigParser()
+#
+# f3.read('mysql.conf',encoding='utf-8')
+# f3.set('test','Username','User1')                   # 修改test-Username的Value值
+# f3.write(open('mysql.conf','w'))
+
+# # 删除
+# f4 = configparser.ConfigParser()
+# f4.read('mysql.conf',encoding='utf-8')
+# f4.remove_section("test")                   # 删除test这个section
+# f4.remove_option('mysqld','log-bin')        # 删除指定option的key
+# f4.write(open('mysql.conf','w'))
