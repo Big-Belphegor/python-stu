@@ -161,3 +161,26 @@ import configparser
 # f4.remove_section("test")                   # 删除test这个section
 # f4.remove_option('mysqld','log-bin')        # 删除指定option的key
 # f4.write(open('mysql.conf','w'))
+
+# re模块，正则表达式
+import re
+
+# # 简单的正则语言示例
+# s = 'Hello world'
+# print(s.find('l'))              # 查找匹配第一个字符的索引位置
+# print(s.replace('ll','xx'))     # 替换字符
+# print(s.split('w'))             # 指定分隔符
+
+# 正式开始介绍re模块
+# 格式：re.方法('匹配规则','被匹配的字符串')
+x = 'Hello world wxxl wxxxl'
+
+print(re.findall('H.l',x))      # '.'匹配任意单个字符，除换行符
+print(re.findall('^H...o',x))   # '^'匹配字符串首字符/字符串
+print(re.findall('w...l$',x))   # '$'匹配字符串尾字符/字符串
+print(re.findall('wx*',x))      # '*'匹配其前面字符/字符串0到n次
+print(re.findall('x+l',x))      # '+'匹配其前面字符/字符串1到n次
+print(re.findall('x?l',x))      # '?'匹配其前面字符/字符串0到1次
+
+
+
