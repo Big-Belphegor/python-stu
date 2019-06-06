@@ -131,7 +131,7 @@ import configparser
 # # 查看
 # f1 = configparser.ConfigParser()                # 生成实例
 # f1.read('mysql.conf',encoding="utf-8")          # 获取mysql.conf文件到f1对象
-
+#
 # print(f1.sections())                            # 获取所有section节点
 # print(f1.options('mysqld'))                     # 获取指定option内的所有key
 # print(f1.get('mysqld','datadir'))               # 获取指定option-key的值
@@ -211,16 +211,21 @@ import re
 # print(re.findall('(\+86)|(abc)','+86abcde'))      # '()'表示一个元素组，将多个字符变成一个整体去进行匹配
 
 
-# re模块的方法
-a = 'abcabcee\e'
-b = '2019-06-05 13:40'
-print(re.search('abc',a).group())           # 'search'方法匹配第一个符合规则的字符/字符串，返回一个第一个对象；注意：打印用.group()方法
-print(re.findall('abc',a))                  # 'findall'方法匹配所有符合规则的字符/字符串，返回一个列表
-print(re.match('abc',a).group())            # 'match'方法匹配开头符合规则的字符/字符串，返回一个对象，打印需要用.group()方法
-print(re.sub('abc','xxx',a))                # 'sub'方法匹配规则的前半部分，将符合的字符/字符串替换为规则的后半部分
-print(re.split('-',b))                      # 'split'方法匹配规则字符/字符串对已有的字符/字符串进行分割，返回一个列表
-print(re.split('[-,:]',b))                  # 也可以复杂匹配
+# # re模块的方法
+# a = 'abcabcee\e'
+# b = '2019-06-05 13:40'
+# print(re.search('abc',a).group())           # 'search'方法匹配第一个符合规则的字符/字符串，返回一个第一个对象；注意：打印用.group()方法
+# print(re.findall('abc',a))                  # 'findall'方法匹配所有符合规则的字符/字符串，返回一个列表
+# print(re.match('abc',a).group())            # 'match'方法匹配开头符合规则的字符/字符串，返回一个对象，打印需要用.group()方法
+# print(re.sub('abc','xxx',a))                # 'sub'方法匹配规则的前半部分，将符合的字符/字符串替换为规则的后半部分
+# print(re.split('-',b))                      # 'split'方法匹配规则字符/字符串对已有的字符/字符串进行分割，返回一个列表
+# print(re.split('[-,:]',b))                  # 也可以复杂匹配
+#
+# obj = re.compile('abc')                     # 'compile'方法将常用的匹配规则定义为类并赋值到一个对象，匹配时用该对象直接匹配即可
+# print(obj.findall(a))
 
-obj = re.compile('abc')                     # 'compile'方法将常用的匹配规则定义为类并赋值到一个对象，匹配时用该对象直接匹配即可
-print(obj.findall(a))
 
+# # 关于模块的导入
+# from jd_test.app.test_add import add
+#
+# print (add(1,2))
