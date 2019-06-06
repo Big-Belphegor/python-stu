@@ -227,5 +227,9 @@ import re
 
 # # 关于模块的导入
 # from jd_test.app.test_add import add
-#
+# '''导入同级/上级路径下的目录下模块方式'''
 # print (add(1,2))
+#
+# from jd_test import app1
+# '''导入同级/上级路径下的模块'''
+# print(app1.sub(3,1))
