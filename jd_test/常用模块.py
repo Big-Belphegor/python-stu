@@ -62,7 +62,7 @@ __author__ = "Alien"
 # print(x.hexdigest())    # 按需指定进制并打印
 
 # logging模块
-import logging
+# import logging
 
 # # 日志级别
 # logging.debug('=== Trigger Debug ===')
@@ -124,9 +124,8 @@ import logging
 #
 # # 更多的信息参考官网：https://docs.python.org/3.4/library/logging.html?highlight=logging#module-logging
 
-# ConfigParser模块，配置文件模块
-import configparser
-
+# # ConfigParser模块，配置文件模块
+# import configparser
 
 # # 查看
 # f1 = configparser.ConfigParser()                # 生成实例
@@ -162,8 +161,8 @@ import configparser
 # f4.remove_option('mysqld','log-bin')        # 删除指定option的key
 # f4.write(open('mysql.conf','w'))
 
-# re模块，正则表达式
-import re
+# # re模块，正则表达式
+# import re
 
 # # 简单的正则语言示例
 # s = 'Hello world'
