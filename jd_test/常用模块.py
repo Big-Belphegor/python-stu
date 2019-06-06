@@ -226,10 +226,11 @@ import re
 
 
 # # 关于模块的导入
-# from jd_test.app.test_add import add
-# '''导入同级/上级路径下的目录下模块方式'''
-# print (add(1,2))
+# import os,sys
+# '''添加项目绝对路径到python路径集中'''
+# Base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# sys.path.append(Base_dir)
 #
-# from jd_test import app1
-# '''导入同级/上级路径下的模块'''
-# print(app1.sub(3,1))
+# from jd_test.app import test_add
+# '''此时可以随意导入项目目录下所有py文件'''
+# print(test_add.add(1,2))
